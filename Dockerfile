@@ -30,6 +30,7 @@ RUN echo 'export PATH=$HOME/.heroku/python/bin:$PATH PYTHONUNBUFFERED=true PYTHO
 RUN chmod +x /app/.profile.d/python.sh
 
 ONBUILD ADD requirements.txt /app/user/
+ONBUILD ADD requirements/ /app/user/requirements
 ONBUILD RUN /app/.heroku/python/bin/pip install -r requirements.txt
 ONBUILD ADD . /app/user/
 
